@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Root from "./components/Root";
 import Home from "./pages/Home";
 import Shows from "./pages/Shows";
@@ -8,7 +8,7 @@ import Register from "./pages/Register";
 import { client } from "./asyncFns/AsyncCollection";
 import fetchShows from "./asyncFns/AsyncCollection";
 
-const routes = createBrowserRouter([
+const routes = createHashRouter([
     {
         path: '/movieland', element: <Root />, children: [
             { index: true, element: <Home />, },
