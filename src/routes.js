@@ -10,7 +10,7 @@ import fetchShows from "./asyncFns/AsyncCollection";
 
 const routes = createBrowserRouter([
     {
-        path: '/', element: <Root />, children: [
+        path: '/movieland', element: <Root />, children: [
             { index: true, element: <Home />, },
             {
                 path: 'shows/:id/:page', element: <Shows />, loader: async () => {
@@ -24,14 +24,14 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path: '/login', element: <Signin />, action: async ({ request }) => {
+        path: 'movieland/login', element: <Signin />, action: async ({ request }) => {
             const formData = await request.formData()
             console.log(formData)
             return null
         }
     },
-    { path: '/register/:show/:step', element: <Register /> },
-    { path: '/profile', element: <Profile /> },
+    { path: 'movieland/register/:show/:step', element: <Register /> },
+    { path: 'movieland/profile', element: <Profile /> },
 
 ])
 export default routes
